@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import nltk
-import torch
-import torch.nn as nn
 import os
 import warnings
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
