@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import warnings
-from sklearn.cluster import KMeans
-from transformers import pipeline
-from nltk.sentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
 import plotly.express as px
 import nltk
