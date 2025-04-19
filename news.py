@@ -42,7 +42,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 with st.sidebar:
     selected_page = ('News Sentiment Analysis Dashboard', 
                                 ['Home', 'Sentiment Analysis VADER', 'Sentiment Analysis TextBlob', 'KMeans Clustering', 'Sentiment Analysis HuggingFace'],
-                                icons=['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'], 
+                                icons==['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'], 
                                 default_index=0,
                                 orientation='vertical',  
                                 styles={
