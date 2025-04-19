@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import TextBlob
 import plotly.express as px
 import nltk
 import torch
