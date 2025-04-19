@@ -40,7 +40,7 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Sidebar navigation menu
 with st.sidebar:
-    selected_page = option_menu('News Sentiment Analysis Dashboard', 
+    selected_page = ('News Sentiment Analysis Dashboard', 
                                 ['Home', 'Sentiment Analysis VADER', 'Sentiment Analysis TextBlob', 'KMeans Clustering', 'Sentiment Analysis HuggingFace'],
                                 icons=['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'], 
                                 default_index=0,
