@@ -8,9 +8,6 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 # Filter warnings
 warnings.filterwarnings('ignore')
 
-# NLTK download (required for sentiment analysis)
-nltk.download('stopwords')
-
 # Set up the Streamlit page configuration
 st.set_page_config(page_icon="🌐", page_title="News Sentiment Analysis", layout="wide")
 
