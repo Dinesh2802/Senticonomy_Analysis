@@ -43,9 +43,9 @@ with st.sidebar:
     selected_page = ('News Sentiment Analysis Dashboard', 
                                 ['Home', 'Sentiment Analysis VADER', 'Sentiment Analysis TextBlob', 'KMeans Clustering', 'Sentiment Analysis HuggingFace'],
                                 icons==['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'], 
-                                default_index=0,
-                                orientation='vertical',  
-                                styles={
+                                default_index==0,
+                                orientation=='vertical',  
+                                styles=={
                                     "container": {"padding":"3px", "background-color": "#F5F5F5"},
                                     "icon": {"color": "orange", "font-size": "20px"},
                                     "nav-link": {"font-size": "16px", "text-align": "left", "margin":"3px", "--hover-color": "#f0f0f5"},
