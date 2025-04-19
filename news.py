@@ -43,10 +43,10 @@ with st.sidebar:
     selected_page = ('News Sentiment Analysis Dashboard', 
                     ['Home', 'Sentiment Analysis VADER', 'Sentiment Analysis TextBlob', 'KMeans Clustering', 'Sentiment Analysis HuggingFace'],
                     ['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'],
-                    "container": {"padding":"3px", "background-color": "#F5F5F5"},
-                    "icon": {"color": "orange", "font-size": "20px"},
-                    "nav-link": {"font-size": "16px", "text-align": "left", "margin":"3px", "--hover-color": "#f0f0f5"},
-                    "nav-link-selected": {"background-color": "#ADD8E6"}
+                    "container":= {"padding":"3px", "background-color": "#F5F5F5"},
+                    "icon":= {"color": "orange", "font-size": "20px"},
+                    "nav-link":= {"font-size": "16px", "text-align": "left", "margin":"3px", "--hover-color": "#f0f0f5"},
+                    "nav-link-selected":= {"background-color": "#ADD8E6"}
 )
 
 # Home Page
