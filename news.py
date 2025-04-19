@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import warnings
-from textblob import TextBlob
+import TextBlob
 import plotly.express as px
 import nltk
 import torch
 import torch.nn as nn
 import os
+import warnings
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 # Filter warnings
