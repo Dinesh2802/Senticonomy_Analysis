@@ -1,3 +1,3 @@
 # Senticonomy_Analysis
 News Sentiment Analysis and Economic Impact Visualization
-![Screenshot 2025-04-20 131700](https://github.com/user-attachments/assets/7b0fe82c-8766-4ef9-b774-d7a364db429a)
+![Screenshot 2025-04-20 131831](https://github.com/user-attachments/assets/c37361ee-5b9b-453d-a1ca-a4bf94e5896e)
