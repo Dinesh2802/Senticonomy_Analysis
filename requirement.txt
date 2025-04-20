@@ -1,1 +1,1 @@
-pip install transformers torch textblob plotly seaborn pandas scikit-learn streamlit nltk
+pip install transformers torch textblob plotly seaborn pandas scikit-learn streamlit streamlit-option-menu nltk
