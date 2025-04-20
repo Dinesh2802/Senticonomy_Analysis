@@ -1,12 +1,26 @@
 import streamlit as st
 import pandas as pd
+import seaborn as sns
 import numpy as np
-import os
+import matplotlib.pyplot as plt
+from streamlit_option_menu import option_menu
 import warnings
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.cluster import KMeans
+from transformers import pipeline
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+from textblob import TextBlob
+import plotly.express as px
+import torch
+import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 # Filter warnings
 warnings.filterwarnings('ignore')
+
+# NLTK download (required for sentiment analysis)
+nltk.download('stopwords')
 
 # Set up the Streamlit page configuration
 st.set_page_config(page_icon="🌐", page_title="News Sentiment Analysis", layout="wide")
@@ -40,14 +54,18 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Sidebar navigation menu
 with st.sidebar:
-    selected_page = ('News Sentiment Analysis Dashboard', 
-                    ['Home', 'Sentiment Analysis VADER', 'Sentiment Analysis TextBlob', 'KMeans Clustering', 'Sentiment Analysis HuggingFace'],
-                    ['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'],
-                    container:= {"padding":"3px", "background-color": "#F5F5F5"},
-                    icon:= {"color": "orange", "font-size": "20px"},
-                    # nav-link:= {"font-size": "16px", "text-align": "left", "margin":"3px", "--hover-color": "#f0f0f5"},
-                    # nav-link-selected:= {"background-color": "#ADD8E6"}
-)
+    selected_page = option_menu('News Sentiment Analysis Dashboard', 
+                                ['Home', 'Sentiment Analysis VADER', 'Sentiment Analysis TextBlob', 'KMeans Clustering', 'Sentiment Analysis HuggingFace'],
+                                icons=['house', 'bar-chart', 'person', 'briefcase', 'pie-chart'], 
+                                default_index=0,
+                                orientation='vertical',  
+                                styles={
+                                    "container": {"padding":"3px", "background-color": "#F5F5F5"},
+                                    "icon": {"color": "orange", "font-size": "20px"},
+                                    "nav-link": {"font-size": "16px", "text-align": "left", "margin":"3px", "--hover-color": "#f0f0f5"},
+                                    "nav-link-selected": {"background-color": "#ADD8E6"},
+                                }
+                                )
 
 # Home Page
 if selected_page == 'Home':
@@ -79,6 +97,7 @@ elif selected_page == 'Sentiment Analysis VADER':
             df["content"] = df["content"].astype(str)
 
             # Sentiment Analysis with VADER
+            nltk.download('vader_lexicon')
             sia = SentimentIntensityAnalyzer()
             df["sentiment_vader"] = df[["title", "description", "content"]].astype(str).agg(" ".join, axis=1).apply(lambda x: sia.polarity_scores(x)["compound"])
             df["sentiment_label_vader"] = df["sentiment_vader"].apply(lambda x: "Positive" if x > 0.05 else "Negative" if x < -0.05 else "Neutral")
